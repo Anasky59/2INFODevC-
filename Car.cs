@@ -21,8 +21,13 @@ public class Car
     public void StartEngine()
     {
         AskForCheckList();
-        if(IsChecklistOk()){
+        while (!IsChecklistOk())
+        {
+            AskForCheckList();
+        }
+        {
             Console.WriteLine("Vrooooom");
+        
 
         }
         
