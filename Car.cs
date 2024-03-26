@@ -23,10 +23,12 @@ public class Car
         AskForCheckList();
         while (!IsChecklistOk())
         {
+            Recup();
             AskForCheckList();
         }
         {
             Console.WriteLine("Vrooooom");
+            
         
 
         }
@@ -57,7 +59,7 @@ public class Car
         {
             if (!item.IsDone)
             {
-                Console.WriteLine($"Cet élément {item.Nom} n'a pas été effectué");
+                // Console.WriteLine($"Cet élément {item.Nom} n'a pas été effectué");
                 return false;
             }
         }
@@ -74,4 +76,18 @@ public class Car
                 question.IsDone = true;
         }
     }
+
+    public void Recup()
+    {
+        foreach (var item in Checklist)
+        {
+            if (!item.IsDone)
+            {
+                Console.WriteLine($"Cet élément {item.Nom} n'a pas été effectué");
+            }
+        }
+
+        
+    }
 }
+
