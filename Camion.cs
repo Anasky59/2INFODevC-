@@ -44,4 +44,13 @@ public class Camion : Car
         ColisList = new Stack<Colis>();
         
     }
+    public override void InitCheckList()
+    {
+        base.Checklist = new Queue<Tache>();
+        base.Checklist.Enqueue(new Tache("Présence de la clé"));
+        base.Checklist.Enqueue(new Tache("Permis sur Soi"));
+        base.Checklist.Enqueue(new Tache("Essence Remplie"));
+        base.Checklist.Enqueue(new Tache("Ceinture Mise"));
+        base.Checklist.Enqueue(new Tache("Chargement Attaché"));
+    }
 }

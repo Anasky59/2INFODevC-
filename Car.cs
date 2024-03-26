@@ -6,7 +6,7 @@ public class Car
     public string Marque { get; set; }
     public string Modele { get; set; }
     public Colors Couleur { get; set; } // Je suppose que Colors est une erreur et que vous voulez une chaîne de caractères pour la couleur
-    public Queue<Tache> Checklist { get; private set; }
+    public Queue<Tache> Checklist { get; set; }
     public int AnneeFabrication { get; set; }
     
 
@@ -39,6 +39,11 @@ public class Car
         Modele = modele;
         Couleur = couleur;
         AnneeFabrication = anneeFabrication;
+        Checklist = new Queue<Tache>();
+        InitCheckList();
+    }
+
+    public virtual void InitCheckList(){
         Checklist = new Queue<Tache>();
         Checklist.Enqueue(new Tache("Présence de la clé"));
         Checklist.Enqueue(new Tache("Permis sur Soi"));
